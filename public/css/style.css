@@ -1,72 +1,121 @@
+/* public/css/style.css */
 :root {
-    --primary: #2e7d32;
-    --secondary: #ffd700;
-    --background: #f8f9fa;
-    --text: #212121;
-    --text-light: #757575;
-    --border: #e0e0e0;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 3rem;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+  /* Color Scheme */
+  --primary: #2e7d32;       /* MCGI Green */
+  --primary-dark: #1b5e20;
+  --secondary: #ffd700;     /* Gold Accent */
+  --background: #f8f9fa;
+  --text: #212121;
+  --text-light: #757575;
+  --border: #e0e0e0;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
 }
 
+/* Base Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--background);
-    color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
 }
 
+/* Header Styles */
 .header {
-    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9));
-    padding: var(--space-lg);
-    color: white;
-    box-shadow: var(--shadow-md);
-    text-align: center;
+  background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9));
+  padding: var(--space-lg);
+  color: white;
+  text-align: center;
+  box-shadow: var(--shadow-md);
 }
 
 .logo {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-sm);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Dance Grid */
 .dance-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-md);
-    padding: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .dance-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
 }
 
 .dance-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
 }
 
 .video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-/* Add remaining CSS from previous answer */
+/* Admin Panel */
+.admin-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  padding: var(--space-md);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.admin-panel.active {
+  right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dance-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-panel {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+}
