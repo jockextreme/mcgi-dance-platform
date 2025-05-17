@@ -1,0 +1,72 @@
+:root {
+    --primary: #2e7d32;
+    --secondary: #ffd700;
+    --background: #f8f9fa;
+    --text: #212121;
+    --text-light: #757575;
+    --border: #e0e0e0;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.header {
+    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9));
+    padding: var(--space-lg);
+    color: white;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.logo {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.dance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-md);
+}
+
+.dance-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.dance-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Add remaining CSS from previous answer */

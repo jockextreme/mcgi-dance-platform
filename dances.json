@@ -1,0 +1,10 @@
+{
+    "dances": [
+        {
+            "title": "Sample Dance",
+            "description": "Example dance entry",
+            "videoUrl": "https://youtu.be/dQw4w9WgXcQ",
+            "date": "2023-01-01"
+        }
+    ]
+}
