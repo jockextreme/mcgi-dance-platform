@@ -1,0 +1,15 @@
+{
+  "adminCode": "MCGI",
+  "repoSettings": {
+    "branch": "main",
+    "autoCommit": true,
+    "commitMessage": "Update dance data"
+  },
+  "security": {
+    "rateLimit": 10,
+    "allowedOrigins": [
+      "https://your-vercel-app.vercel.app",
+      "http://localhost:3000"
+    ]
+  }
+}
